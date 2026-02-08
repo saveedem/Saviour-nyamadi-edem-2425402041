@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Total Filling Station</title>
+    <style>
+        :root {
+            --total-red: #ed1c24;
+            --total-blue: #002d72;
+            --total-orange: #ff8200;
+            --light-grey: #f4f7f9;
+            --white: #ffffff;
+            --text-main: #333333;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+
+        body { 
+            background-color: var(--light-grey); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+
+        /* NAVIGATION */
+        nav {
+            background: var(--white);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { 
+            font-size: 1.4rem; 
+            font-weight: 800; 
+            color: var(--total-red); 
+        }
+        .logo span { 
+            color: var(--total-blue); 
+        }
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            gap: 25px; 
+        }
+        nav ul li a { 
+            color: var(--text-main); 
+            font-weight: 600; 
+            font-size: 1rem; 
+        }
+        nav ul li a:hover { 
+            color: var(--total-red); 
+        }
+
+        /* HEADER */
+        .services-header {
+            background: linear-gradient(45deg, rgba(0,45,114,0.95), rgba(0,45,114,0.8)), 
+                        url('/img/Fuel\ pump\ 1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 5%;
+            text-align: center;
+            color: white;
+        }
+        .services-header h1 { 
+            font-size: 3rem; 
+            margin-bottom: 15px; 
+            letter-spacing: -1px; 
+        }
+        .services-header p { 
+            font-size: 1.1rem; 
+            opacity: 0.9; 
+            max-width: 600px; 
+            margin: 0 auto; 
+        }
+
+        /* SERVICE GRID */
+        .content-wrapper { 
+            padding: 80px 5%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover { transform: translateY(-10px); }
+        
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-body { 
+            padding: 30px; 
+            flex-grow: 1; 
+        }
+        .card-body h3 { 
+            color: var(--total-blue); 
+            font-size: 1.5rem; 
+            margin-bottom: 15px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        .card-body p { 
+            color: #666; 
+            font-size: 0.95rem; 
+            margin-bottom: 20px; 
+        }
+        
+        .feature-list { 
+            list-style: none; 
+            margin-bottom: 25px; 
+        }
+        .feature-list li { 
+            font-size: 0.85rem; 
+            margin-bottom: 8px; 
+            color: #444; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        }
+        .feature-list li::before { 
+            content: '✓'; 
+            color: var(--total-orange); 
+            font-weight: bold; 
+        }
+
+        .card-footer {
+            padding: 20px 30px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .report-link { 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            color: var(--total-red); 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+
+        /* FOOTER */
+        footer { 
+            background: var(--total-blue); 
+            color: white; 
+            padding: 60px 5% 30px; 
+            margin-top: 80px; 
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 { 
+            color: var(--total-orange); 
+            margin-bottom: 20px; 
+            font-size: 1.2rem; 
+        }
+        .footer-col p, .footer-col a { 
+            color: #bdc3c7; 
+            font-size: 0.9rem; 
+            margin-bottom: 10px; 
+            display: block; 
+        }
+        .footer-bottom { 
+            text-align: center; 
+            border-top: 1px solid rgba(255,255,255,0.1); 
+            padding-top: 30px; 
+            font-size: 0.8rem; 
+        }
+
+        @media (max-width: 768px) {
+            .services-header h1 { font-size: 2.2rem; }
+            .service-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="index.html">EDEM <span>PETROLEUM</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" style="color: var(--total-red);">Services</a></li>
+            <li><a href="report.html">Report</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html">Account</a></li>
+        </ul>
+    </nav>
+
+    <header class="services-header">
+        <h1>Premium Care for Your Vehicle</h1>
+        <p>Beyond fuel, we provide the energy and maintenance expertise your engine needs to perform at its peak in 2026.</p>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="service-container">
+            
+            <!-- SERVICE 1: FUEL -->
+            <div class="service-card">
+                <div class="card-image" style="background-image: url('/img/Fuel\ Sales.jpg');"></div>
+                <div class="card-body">
+                    <h3>Fuel Sales</h3>
+                    <p>Experience the power of TotalEnergies Excellium. Our fuel is designed to clean your engine and reduce CO2 emissions.</p>
+                    <ul class="feature-list">
+                        <li>High-Octane Super Unleaded</li>
+                        <li>Excellium Diesel for long-haul durability</li>
+                        <li>Precision electronic metering (no short-filling)</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="report.html" class="report-link">Report Fuel Issue</a>
+                </div>
+            </div>
+
+            <!-- SERVICE 2: ENGINE OIL -->
+            <div class="service-card">
+                <div class="card-image" style="background-image: url('img/Engine\ Oil.jpg');"></div>
+                <div class="card-body">
+                    <h3>Engine Oil</h3>
+                    <p>Protect your investment with Quartz Lubricants. We stock genuine oil for every vehicle type, from motorcycles to heavy trucks.</p>
+                    <ul class="feature-list">
+                        <li>Quartz 9000 Fully Synthetic</li>
+                        <li>High-temp resistant formulations</li>
+                        <li>Manufacturer-approved lubricants</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="report.html" class="report-link">Oil Feedback</a>
+                </div>
+            </div>
+
+            <!-- SERVICE 3: LUBE & CHANGE -->
+            <div class="service-card">
+                <div class="card-image" style="background-image: url('img/Oil\ Change\ &\ Lube.jpg');"></div>
+                <div class="card-body">
+                    <h3>Oil Change & Lube</h3>
+                    <p>Our Quartz Auto Service centers provide a professional environment for rapid maintenance and safety checks.</p>
+                    <ul class="feature-list">
+                        <li>Expert oil and filter replacement</li>
+                        <li>10-Point safety inspection included</li>
+                        <li>Computerized maintenance tracking</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="report.html" class="report-link">Service Report</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>📞 +233 54 399 9435</p>
+                <p>📧 Saveedem12345@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Station Links</h4>
+                <a href="about.html">About Total</a>
+                <a href="services.html">Services Guide</a>
+                <a href="report.html">Submit Report</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Account Recovery</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Edem Petroleum | Energy is our Future.
+        </div>
+    </footer>
+
+</body>
+</html>

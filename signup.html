@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Edem Petroleum</title>
+    <style>
+        :root {
+            --brand-red: #ed1c24;
+            --brand-blue: #002d72;
+            --brand-orange: #ff8200;
+            --light-grey: #f4f7f9;
+            --white: #ffffff;
+            --text-main: #333333;
+            --shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background-color: var(--light-grey);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* SIGNUP CONTAINER */
+        .signup-container {
+            display: flex;
+            width: 1000px;
+            min-height: 700px;
+            background: var(--white);
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        /* LEFT SIDE: VISUAL */
+        .signup-visual {
+            flex: 1;
+            background: linear-gradient(rgba(237, 28, 36, 0.85), rgba(237, 28, 36, 0.85)), 
+                        url('https://images.unsplash.com');
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .signup-visual h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 20px; 
+            line-height: 1.1; 
+        }
+        .signup-visual p { 
+            opacity: 0.9; 
+            font-size: 1rem; 
+            margin-bottom: 30px; 
+        }
+        
+        .benefit-list { 
+            list-style: none; 
+        }
+        .benefit-list li { 
+            margin-bottom: 15px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            font-weight: 600; 
+        }
+        .benefit-list li i { 
+            font-style: normal; 
+            background: rgba(255,255,255,0.2); 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+        }
+
+        /* RIGHT SIDE: FORM */
+        .signup-form-area {
+            flex: 1.2;
+            padding: 50px;
+            overflow-y: auto;
+        }
+
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            color: var(--brand-red); 
+            margin-bottom: 30px; 
+        }
+        .logo span { 
+            color: var(--brand-blue); 
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group { 
+            margin-bottom: 15px; 
+        }
+        .form-group.full { 
+            grid-column: span 2; 
+        }
+        
+        .form-group label { 
+            display: block; 
+            font-size: 0.8rem; 
+            font-weight: 700; 
+            color: #555; 
+            margin-bottom: 5px; 
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #edf2f7;
+            border-radius: 10px;
+            outline: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .form-group input:focus { border-color: var(--brand-blue); }
+
+        .signup-btn {
+            background: var(--brand-red);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .signup-btn:hover { 
+            background: var(--brand-blue); 
+            transform: translateY(-2px); 
+        }
+
+        .login-text { 
+            text-align: center; 
+            margin-top: 25px; 
+            font-size: 0.9rem; 
+            color: #777; 
+        }
+        .login-text a { 
+            color: var(--brand-blue); 
+            font-weight: 700; 
+            text-decoration: none; 
+        }
+
+        .back-home {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 950px) {
+            .signup-container { 
+                width: 100%; 
+                height: auto; 
+                flex-direction: column; 
+            }
+            .signup-visual { padding: 40px 30px; }
+
+            .form-grid { grid-template-columns: 1fr; }
+            
+            .form-group.full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-home">← Home</a>
+
+    <div class="signup-container">
+        <!-- VISUAL SIDE -->
+        <div class="signup-visual">
+            <h1>Join the Edem Family.</h1>
+            <p>Become a member today and enjoy exclusive benefits across all our 2026 service points.</p>
+            
+            <ul class="benefit-list">
+                <li><i>01</i> Track Fuel Spending</li>
+                <li><i>02</i> Priority After-Sales Support</li>
+                <li><i>03</i> Engine Health Maintenance Alerts</li>
+                <li><i>04</i> Exclusive Member Discounts</li>
+            </ul>
+        </div>
+
+        <!-- FORM SIDE -->
+        <div class="signup-form-area">
+            <div class="logo">EDEM <span>Petroleum</span></div>
+            <h2 style="color: var(--brand-blue); margin-bottom: 5px;">Create Your Account</h2>
+            <p style="color: #888; font-size: 0.85rem; margin-bottom: 25px;">Please fill in your details to get started.</p>
+
+            <form action="index.html" method="GET">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Doe" required>
+                    </div>
+                    <div class="form-group full">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+233..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Type</label>
+                        <select>
+                            <option>Private Car</option>
+                            <option>Motorcycle</option>
+                            <option>Truck/Heavy Duty</option>
+                            <option>Commercial/Taxi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="Min. 8 characters" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" placeholder="Re-enter password" required>
+                    </div>
+                </div>
+
+                <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.8rem; color: #666; cursor: pointer; margin-top: 10px;">
+                    <input type="checkbox" required style="margin-top: 3px;">
+                    I agree to the Terms of Service and Privacy Policy of Edem Petroleum 2026.
+                </label>
+
+                <button type="submit" class="signup-btn">Register Account</button>
+            </form>
+
+            <div class="login-text">
+                Already have an account? <a href="login.html">Login here</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

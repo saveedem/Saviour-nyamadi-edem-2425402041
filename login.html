@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Login | Edem Petroleum</title>
+    <style>
+        :root {
+            --brand-red: #ed1c24;
+            --brand-blue: #002d72;
+            --brand-orange: #ff8200;
+            --light-grey: #f4f7f9;
+            --white: #ffffff;
+            --text-main: #333333;
+            --shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background-color: var(--light-grey);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* LOGIN CONTAINER */
+        .login-container {
+            display: flex;
+            width: 900px;
+            height: 600px;
+            background: var(--white);
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        /* LEFT SIDE: VISUAL */
+        .login-visual {
+            flex: 1;
+            background: linear-gradient(rgba(0, 45, 114, 0.85), rgba(0, 45, 114, 0.85)), 
+                        url('https://images.unsplash.com');
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .login-visual h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 20px; 
+            line-height: 1.1; 
+        }
+        .login-visual p { 
+            opacity: 0.8; 
+            font-size: 1rem; 
+            margin-bottom: 30px; 
+        }
+
+        /* RIGHT SIDE: FORM */
+        .login-form-area {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            color: var(--brand-red); 
+            margin-bottom: 40px; 
+        }
+        .logo span { 
+            color: var(--brand-blue); 
+        }
+
+        .form-group { 
+            margin-bottom: 20px; 
+        }
+        .form-group label { 
+            display: block; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            color: #555; 
+            margin-bottom: 8px; 
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #edf2f7;
+            border-radius: 12px;
+            outline: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .form-group input:focus { 
+            border-color: var(--brand-orange); 
+            background: #fff; 
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+        .form-options a { 
+            color: var(--brand-blue); 
+            text-decoration: none; 
+            font-weight: 600; 
+        }
+
+        .login-btn {
+            background: var(--brand-blue);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .login-btn:hover { 
+            background: var(--brand-red); 
+            transform: translateY(-2px); 
+        }
+
+        .signup-text { 
+            text-align: center; 
+            margin-top: 30px; 
+            font-size: 0.9rem; 
+            color: #777; 
+        }
+        .signup-text a { 
+            color: var(--brand-red); 
+            font-weight: 700; 
+            text-decoration: none; 
+        }
+
+        /* BACK TO HOME */
+        .back-home {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: var(--brand-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 950px) {
+            .login-container { width: 95%; height: auto; }
+            .login-visual { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-home">← Back to Site</a>
+
+    <div class="login-container">
+        <!-- VISUAL SIDE -->
+        <div class="login-visual">
+            <h1>Manage Your Journey.</h1>
+            <p>Access your fuel rewards, transaction history, and after-sales reports in one secure place.</p>
+            <div style="font-size: 0.8rem; opacity: 0.6;">
+                Support: Saveedem12345@gmail.com
+            </div>
+        </div>
+
+        <!-- FORM SIDE -->
+        <div class="login-form-area">
+            <div class="logo">EDEM <span>Petroleum</span></div>
+            <h2 style="margin-bottom: 10px; color: var(--brand-blue);">Welcome Back</h2>
+            <p style="color: #888; font-size: 0.9rem; margin-bottom: 30px;">Please enter your credentials to access your account.</p>
+
+            <form action="index.html" method="GET">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-options">
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Secure Login</button>
+            </form>
+
+            <div class="signup-text">
+                Don't have an account? <a href="signup.html">Register Now</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
